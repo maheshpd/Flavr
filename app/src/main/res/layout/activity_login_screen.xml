@@ -3,6 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent"
         tools:context=".LoginScreen">
 
@@ -18,7 +19,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:text="LOG IN"
                 android:textColor="@color/textColor"
-                android:textSize="28sp"
+                android:textSize="36sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +48,7 @@
                 android:ems="10"
                 android:hint="Your Email"
                 android:inputType="textEmailAddress"
-                android:paddingStart="32dp"
+                android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,8 +63,8 @@
                 android:background="@drawable/edt_design"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="text"
-                android:paddingStart="32dp"
+                android:inputType="text|textPassword"
+                android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/email_edt"
@@ -106,7 +107,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_arrow_back_black_24dp" />

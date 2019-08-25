@@ -1,14 +1,24 @@
 package com.example.flavr
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
+import android.view.Gravity
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_login_screen.*
 
 class LoginScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         setContentView(R.layout.activity_login_screen)
+
+        login_btn.setOnClickListener {
+            KCustomToast.infoToast(this, "Some error", Gravity.CENTER)
+        }
+
     }
+
+
+
+
+
 }
