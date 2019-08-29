@@ -4,18 +4,15 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".fragment.Categories">
 
-    <include layout="@layout/toolbar" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categories_rv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            app:itemBackground="@drawable/item_bg"
-            app:labelVisibilityMode="unlabeled"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_menu" />
+            app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
