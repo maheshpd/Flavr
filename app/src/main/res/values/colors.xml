@@ -8,5 +8,7 @@
     <color name="textColor">#333333</color>
     <color name="info">#123</color>
     <color name="app_main_color">#FF8C2B</color>
+    <color name="card_text">#9E9E9E</color>
+
 
 </resources>
