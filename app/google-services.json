@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "663874476552",
+    "firebase_url": "https://flavr-c2f16.firebaseio.com",
+    "project_id": "flavr-c2f16",
+    "storage_bucket": "flavr-c2f16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663874476552:android:922e0a54e75e73d50ecfbd",
+        "android_client_info": {
+          "package_name": "com.example.flavr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663874476552-csp9qr60tn8jqn9tum2r20uq5p8cligr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4qjo_1ZcMCOUK9qK7di561k9qA_mvzFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663874476552-csp9qr60tn8jqn9tum2r20uq5p8cligr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "663874476552-1egslkmk7353lpiko6tfh7ttpqks7ve3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.createsapps.FLAVR-RECIPE"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
