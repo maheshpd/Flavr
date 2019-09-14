@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "663874476552-v71di63cnnslph5jvqkuqhlcug0o8a0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flavr",
+            "certificate_hash": "98795edb68a38b1268d3ec20d909184eaa03ae0c"
+          }
+        },
+        {
           "client_id": "663874476552-csp9qr60tn8jqn9tum2r20uq5p8cligr.apps.googleusercontent.com",
           "client_type": 3
         }

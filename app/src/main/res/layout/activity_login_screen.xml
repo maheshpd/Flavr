@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
-        tools:context=".LoginScreen">
+        tools:context=".activity.LoginScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
-                android:id="@+id/email_edt"
+                android:id="@+id/login_email_edt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
-                android:id="@+id/password_edt"
+                android:id="@+id/login_password_edt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -67,9 +67,9 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/email_edt"
-                app:layout_constraintStart_toStartOf="@+id/email_edt"
-                app:layout_constraintTop_toBottomOf="@+id/email_edt" />
+                app:layout_constraintEnd_toEndOf="@+id/login_email_edt"
+                app:layout_constraintStart_toStartOf="@+id/login_email_edt"
+                app:layout_constraintTop_toBottomOf="@+id/login_email_edt" />
 
         <Button
                 android:id="@+id/login_btn"
@@ -84,7 +84,7 @@
                 android:textColor="@android:color/background_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_edt" />
+                app:layout_constraintTop_toBottomOf="@+id/login_password_edt" />
 
         <Button
                 android:id="@+id/forgot_btn"

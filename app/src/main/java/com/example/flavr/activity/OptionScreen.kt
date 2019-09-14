@@ -1,10 +1,10 @@
-package com.example.flavr
+package com.example.flavr.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.view.WindowManager
+import com.example.flavr.R
 import kotlinx.android.synthetic.main.activity_optionscreen.*
 
 class OptionScreen : AppCompatActivity() {
@@ -15,12 +15,12 @@ class OptionScreen : AppCompatActivity() {
         setContentView(R.layout.activity_optionscreen)
 
         loginBtn.setOnClickListener {
-            var intent = Intent(this,LoginScreen::class.java)
+            var intent = Intent(this, LoginScreen::class.java)
             startActivity(intent)
         }
 
         signupBtn.setOnClickListener {
-            var intent = Intent(this,SignUpScreen::class.java)
+            var intent = Intent(this, SignUpScreen::class.java)
             startActivity(intent)
         }
     }

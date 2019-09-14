@@ -1,23 +1,27 @@
-package com.example.flavr
+package com.example.flavr.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.example.flavr.R
+import com.google.firebase.auth.FirebaseAuth
 
 class Splash : AppCompatActivity() {
 
     private var mDelayHandler: Handler? = null
     private val SPLASH_DELAY: Long = 3000 //3 second
 
+    private lateinit var mAuth: FirebaseAuth
+
     internal val mRunnable: Runnable = Runnable {
         if (isFinishing) {
-            val intent = Intent(applicationContext,MainActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()
         }else {
-            val intent = Intent(applicationContext,OptionScreen::class.java)
+            val intent = Intent(applicationContext, OptionScreen::class.java)
             startActivity(intent)
             finish()
         }

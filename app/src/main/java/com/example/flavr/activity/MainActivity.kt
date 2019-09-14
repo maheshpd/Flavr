@@ -1,9 +1,9 @@
-package com.example.flavr
+package com.example.flavr.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
-import android.view.WindowManager
+import com.example.flavr.R
 
 class MainActivity : AppCompatActivity() {
 
