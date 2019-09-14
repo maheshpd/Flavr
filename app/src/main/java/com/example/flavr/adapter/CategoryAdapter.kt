@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flavr.Interface.IItemClickListener
 import com.example.flavr.R
 import com.example.flavr.model.CategoryModel
 
@@ -23,20 +25,32 @@ class CategoryAdapter(private val context: Context, private val itemList: List<C
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.txt_name.text = itemList!![position].name
+        holder.setClick(object : IItemClickListener {
+            override fun onItemClickListener(view: View, position: Int) {
+                Toast.makeText(context, " " + itemList[position].name, Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
 
     inner class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view),
         View.OnClickListener {
+
         var txt_name: TextView
+
+        lateinit var itemClickListener: IItemClickListener
+
+        fun setClick(itemClickListener: IItemClickListener) {
+            this.itemClickListener = itemClickListener
+        }
 
         init {
             txt_name = view.findViewById(R.id.cate_name)
             view.setOnClickListener(this)
         }
 
-        override fun onClick(p0: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        override fun onClick(view: View?) {
+            itemClickListener.onItemClickListener(view!!, adapterPosition)
         }
     }
 
