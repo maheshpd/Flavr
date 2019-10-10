@@ -2,14 +2,19 @@ package com.example.flavr.activity
 
 import android.os.Bundle
 import android.view.Window
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.flavr.R
 import com.example.flavr.fragment.Categories
 import com.example.flavr.fragment.Favorites
 import com.example.flavr.fragment.Home
 import com.example.flavr.fragment.Profile
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,65 +23,53 @@ class MainActivity : AppCompatActivity() {
     lateinit var favorites: Favorites
     lateinit var profile: Profile
 
+    val fragment: Fragment = Home()
+    private var content: FrameLayout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-        //By default open Home Fragment
-        homeFragment = Home()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.Main_Container, homeFragment)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            .commit()
+        bottomnavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        addFragment(fragment)
+    }
 
 
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottomnavigation)
-        bottomNavigation.setOnNavigationItemSelectedListener { item ->
 
-            when (item.itemId) {
-
-                R.id.home -> {
-                    homeFragment = Home()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.Main_Container, homeFragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-
-                R.id.recipe -> {
-                    categories = Categories()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.Main_Container, categories)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-
-                R.id.recipe -> {
-                    favorites = Favorites()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.Main_Container, favorites)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
-
-                R.id.recipe -> {
-                    profile = Profile()
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.Main_Container, profile)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit()
-                }
+    private val  mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                val homefragment = Home()
+                addFragment(homefragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.recipe -> {
+                val categoriesfragment = Categories()
+                addFragment(categoriesfragment)
+                return@OnNavigationItemSelectedListener true
             }
 
-            true
+            R.id.favourite -> {
+                val favoritesFragment = Favorites()
+                addFragment(favoritesFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.profile -> {
+                val profileFragment = Profile()
+                addFragment(profileFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+
         }
+    }
+
+
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.content,fragment,fragment.javaClass.simpleName)
+            .commit()
 
     }
 }
