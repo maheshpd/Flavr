@@ -35,40 +35,41 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeIcon -> {
+                    val homefragment = Home()
+                    addFragment(homefragment)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.recipe -> {
+                    val categoriesfragment = Categories()
+                    addFragment(categoriesfragment)
+                    return@OnNavigationItemSelectedListener true
+                }
 
-    private val  mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.home -> {
-                val homefragment = Home()
-                addFragment(homefragment)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.recipe -> {
-                val categoriesfragment = Categories()
-                addFragment(categoriesfragment)
-                return@OnNavigationItemSelectedListener true
-            }
+                R.id.favourite -> {
+                    val favouritefragment = Favorites()
+                    addFragment(favouritefragment)
+                    return@OnNavigationItemSelectedListener true
+                }
 
-            R.id.favourite -> {
-                val favoritesFragment = Favorites()
-                addFragment(favoritesFragment)
-                return@OnNavigationItemSelectedListener true
-            }
+                R.id.profile -> {
 
-            R.id.profile -> {
-                val profileFragment = Profile()
-                addFragment(profileFragment)
-                return@OnNavigationItemSelectedListener true
-            }
+                    val profilefragment = Profile()
+                    addFragment(profilefragment)
+                    return@OnNavigationItemSelectedListener true
+                }
 
+            }
+            false
         }
-    }
-
 
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.content,fragment,fragment.javaClass.simpleName)
+            .replace(R.id.content, fragment, fragment.javaClass.simpleName)
             .commit()
 
     }
