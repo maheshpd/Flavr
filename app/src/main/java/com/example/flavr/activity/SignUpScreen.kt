@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import com.example.flavr.KCustomToast
 import com.example.flavr.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_optionscreen.*
 import kotlinx.android.synthetic.main.activity_sign_up_screen.*
-import java.util.regex.Pattern
 
 class SignUpScreen : AppCompatActivity() {
 
@@ -61,6 +58,9 @@ class SignUpScreen : AppCompatActivity() {
 
         }
 
+        signup_back.setOnClickListener {
+            onBackPressed()
+        }
 
     }
 

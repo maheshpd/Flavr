@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_host"
+        app:startDestination="@id/home2">
+
+    <fragment
+            android:id="@+id/categories"
+            android:name="com.example.flavr.fragment.Categories"
+            android:label="fragment_categories"
+            tools:layout="@layout/fragment_categories" />
+    <fragment
+            android:id="@+id/favorites"
+            android:name="com.example.flavr.fragment.Favorites"
+            android:label="fragment_favorites"
+            tools:layout="@layout/fragment_favorites" />
+    <fragment
+            android:id="@+id/home2"
+            android:name="com.example.flavr.fragment.Home"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home" />
+    <fragment
+            android:id="@+id/profile2"
+            android:name="com.example.flavr.fragment.Profile"
+            android:label="fragment_profile"
+            tools:layout="@layout/fragment_profile" />
+    <activity
+            android:id="@+id/detailsActivity"
+            android:name="com.example.flavr.activity.DetailsActivity"
+            android:label="activity_details"
+            tools:layout="@layout/activity_details" />
+    <activity
+            android:id="@+id/loginScreen"
+            android:name="com.example.flavr.activity.LoginScreen"
+            android:label="activity_login_screen"
+            tools:layout="@layout/activity_login_screen" />
+    <activity
+            android:id="@+id/signUpScreen"
+            android:name="com.example.flavr.activity.SignUpScreen"
+            android:label="activity_sign_up_screen"
+            tools:layout="@layout/activity_sign_up_screen" />
+    <activity
+            android:id="@+id/optionScreen"
+            android:name="com.example.flavr.activity.OptionScreen"
+            android:label="activity_optionscreen"
+            tools:layout="@layout/activity_optionscreen" />
+</navigation>

@@ -50,6 +50,10 @@ class LoginScreen : AppCompatActivity() {
 
         }
 
+        login_in_back.setOnClickListener {
+            onBackPressed()
+        }
+
 
     }
 
